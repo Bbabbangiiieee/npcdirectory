@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Contacts | NPC MinGen Directory</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- App js -->
+        <script src="assets/js/plugin.js"></script>
+
+    </head>
+
+    <body data-topbar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="dashboard.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="./assets/img/napocorlogo.png" alt="" height="30">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="./assets/img/napocorlogo.png" alt="NPC Logo" height="50">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex">
+
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
+                                <i class="fas fa-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                    <span key="t-profile">Profile</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i
+                                        class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                        key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title" key="t-menu">Menu</li>
+
+                            <li>
+                                <a href="dashboard.html" class="waves-effect">
+                                    <i class="fas fa-home"></i>
+                                    <span key="t-dashboards">Dashboard</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="contacts.html" class="waves-effect">
+                                    <i class="fas fa-address-book"></i>
+                                    <span key="t-contacts">Contacts</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0 font-size-18">Contacts</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">NPC MinGen Directory</a></li>
+                                            <li class="breadcrumb-item active">Contacts</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body border-bottom">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0 card-title flex-grow-1">Manage Contacts</h5>
+                                            <div class="flex-shrink-0">
+                                                <a href="add_contact.html" class="btn btn-primary waves-effect btn-label waves-lighty"><i class="fas fa-plus-circle label-icon"></i> Add Contact</a>
+                                                <div class="dropdown d-inline-block">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body border-bottom">
+                                        <div class="row g-3">
+                                            <div class="col-xxl-4 col-lg-6">
+                                                <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+                                            </div>
+                                            <div class="col-xxl-2 col-lg-6">
+                                                <select class="form-control select2">
+                                                    <option>Status</option>
+                                                    <option value="Active">Active</option>
+                                                    <option value="New">New</option>
+                                                    <option value="Close">Close</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xxl-2 col-lg-4">
+                                                <select class="form-control select2">
+                                                    <option>Select Type</option>
+                                                    <option value="1">Full Time</option>
+                                                    <option value="2">Part Time</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xxl-2 col-lg-4">
+                                                <div id="datepicker1">
+                                                    <input type="text" class="form-control" placeholder="Select date" data-date-format="dd M, yyyy" data-date-autoclose="true" data-date-container='#datepicker1' data-provide="datepicker">
+                                                </div><!-- input-group -->
+                                            </div>
+                                            <div class="col-xxl-2 col-lg-4">
+                                                <button type="button" class="btn btn-soft-secondary w-100"><i class="mdi mdi-filter-outline align-middle"></i> Filter</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end card-->
+                            </div><!--end col-->
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="avatar-sm mx-auto mb-4">
+                                            <span class="avatar-title rounded-circle bg-primary-subtle text-primary font-size-16">
+                                                D
+                                            </span>
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">David McHenry</a></h5>
+                                        <p class="text-muted">UI/UX Designer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Photoshop</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">illustrator</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-2.jpg" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Frank Kirk</a></h5>
+                                        <p class="text-muted">Frontend Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Html</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Css</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-3.jpg" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Rafael Morales</a></h5>
+                                        <p class="text-muted">Backend Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Java</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Python</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="avatar-sm mx-auto mb-4">
+                                            <span class="avatar-title rounded-circle bg-success-subtle text-success font-size-16">
+                                                M
+                                            </span>
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Mark Ellison</a></h5>
+                                        <p class="text-muted">Full Stack Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Ruby</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-4.jpg" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Minnie Walter</a></h5>
+                                        <p class="text-muted">Frontend Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Html</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Css</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-5.jpg" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Shirley Smith</a></h5>
+                                        <p class="text-muted">UI/UX Designer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Photoshop</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">illustrator</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="avatar-sm mx-auto mb-4">
+                                            <span class="avatar-title rounded-circle bg-info-subtle text-info font-size-16">
+                                                J
+                                            </span>
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">John Santiago</a></h5>
+                                        <p class="text-muted">Full Stack Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Ruby</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-7.jpg" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Colin Melton</a></h5>
+                                        <p class="text-muted">Backend Developer</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Java</a>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Python</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/dashboard.init.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
