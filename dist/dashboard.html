@@ -1,326 +1,327 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        
-        <meta charset="utf-8" />
-        <title>Dashboard | NPC MinGen Directory</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+<head>
 
-        <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-        <!-- App js -->
-        <script src="assets/js/plugin.js"></script>
+    <meta charset="utf-8" />
+    <title>Dashboard | NPC MinGen Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    </head>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- ======= DataTables ====== -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/plugin.js"></script>
 
-    <body data-topbar="dark">
+</head>
 
-        <!-- Begin page -->
-        <div id="layout-wrapper">
+<body data-topbar="dark">
 
-            <header id="page-topbar">
-                <div class="navbar-header">
-                    <div class="d-flex">
-                        <!-- LOGO -->
-                        <div class="navbar-brand-box">
-                            <a href="dashboard.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="./assets/img/napocorlogo.png" alt="" height="30">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="./assets/img/napocorlogo.png" alt="NPC Logo" height="50">
-                                </span>
-                            </a>
-                        </div>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
 
-                        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                            <i class="fa fa-fw fa-bars"></i>
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="dashboard.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="./assets/img/napocorlogo.png" alt="" height="30">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="./assets/img/napocorlogo.png" alt="NPC Logo" height="50">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
+                            <i class="fas fa-chevron-down d-none d-xl-inline-block"></i>
                         </button>
-                    </div>
-
-                    <div class="d-flex">
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user"></i>
-                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
-                                <i class="fas fa-chevron-down d-none d-xl-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
-                                    <span key="t-profile">Profile</span></a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i
-                                        class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                                        key="t-logout">Logout</span></a>
-                            </div>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                <span key="t-profile">Profile</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#"><i
+                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
                         </div>
-    
                     </div>
-                </div>
-            </header>
 
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
-
-                <div data-simplebar class="h-100">
-
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" key="t-menu">Menu</li>
-
-                            <li>
-                                <a href="dashboard.html" class="waves-effect">
-                                    <i class="fas fa-home"></i>
-                                    <span key="t-dashboards">Dashboard</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="contacts.html" class="waves-effect">
-                                    <i class="fas fa-address-book"></i>
-                                    <span key="t-contacts">Contacts</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- Sidebar -->
                 </div>
             </div>
-            <!-- Left Sidebar End -->
+        </header>
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
 
-                <div class="page-content">
-                    <div class="container-fluid">
+            <div data-simplebar class="h-100">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title" key="t-menu">Menu</li>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">NPC MinGen Directory</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
-                                        </ol>
-                                    </div>
+                        <li>
+                            <a href="dashboard.html" class="waves-effect">
+                                <i class="fas fa-home"></i>
+                                <span key="t-dashboards">Dashboard</span>
+                            </a>
+                        </li>
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
+                        <li>
+                            <a href="contacts.html" class="waves-effect">
+                                <i class="fas fa-address-book"></i>
+                                <span key="t-contacts">Contacts</span>
+                            </a>
+                        </li>
 
-                        <div class="row">
-                            <div class="col-xl-4">
-                                <div class="card overflow-hidden">
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <h4 class="card-title mb-4">Total Contacts</h4>
-                                        </div>
-                                        <div class="row">
-                                            <center>
-                                                <div class="col-sm-6 mt-2">
-                                                    <h2>$34,252</h2>
-                                                    <p class="text-muted">Across all Departments</p>
-                                                </div>
-                                            </center>
-                                            <div class="col-sm-6">
-                                                <div class="mt-4 mt-sm-0">
-                                                    <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <h4 class="card-title mb-4">Total Contacts Per Department</h4>
-                                            <i class="fas fa-ellipsis-h ms-auto"></i>
-                                        </div>
-                                        <div class="row">
-                                            <center>
-                                                <div class="col-sm-6 mt-2">
-                                                    <h2>$34,252</h2>
-                                                    <p class="text-muted"><bold class="fw-bold">Department:</bold><span class="text-success me-2"> 12%</span></p>
-                                                </div>
-                                            </center>
-                                            <div class="col-sm-6">
-                                                <div class="mt-4 mt-sm-0">
-                                                    <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-sm-flex flex-wrap">
-                                            <h4 class="card-title mb-4">Contacts Distribution</h4>
-                                        </div>
-                                        
-                                        <div id="stacked-column-chart" class="apex-charts" data-colors='["--bs-primary", "--bs-warning", "--bs-success"]' dir="ltr"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center justify-content-between mt-2 mb-4">
-                                            <h4 class="card-title mb-0">Departments</h4>
-                                            <div class="flex-shrink-0">
-                                                <a href="add_department.html" class="btn btn-primary waves-effect btn-label waves-lighty"><i class="fas fa-plus-circle label-icon"></i> Add Department</a>
-                                                <div class="dropdown d-inline-block">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table align-middle table-nowrap mb-0">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th class="align-middle">No.</th>
-                                                        <th class="align-middle">Department Name</th>
-                                                        <th class="align-middle">Description</th>
-                                                        <th class="align-middle">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- end table-responsive -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-                        
-                    </div> <!-- container-fluid -->
+                    </ul>
                 </div>
-                <!-- End Page-content -->
-
-                <!-- Modal -->
-                <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="transaction-detailModalLabel">Order Details</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
-                                <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
-
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Product Name</th>
-                                                <th scope="col">Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">
-                                                    <div>
-                                                        <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
-                                                    </div>
-                                                </th>
-                                                <td>
-                                                    <div>
-                                                        <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
-                                                        <p class="text-muted mb-0">$ 225 x 1</p>
-                                                    </div>
-                                                </td>
-                                                <td>$ 255</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <div>
-                                                        <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
-                                                    </div>
-                                                </th>
-                                                <td>
-                                                    <div>
-                                                        <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
-                                                        <p class="text-muted mb-0">$ 145 x 1</p>
-                                                    </div>
-                                                </td>
-                                                <td>$ 145</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <h6 class="m-0 text-right">Sub Total:</h6>
-                                                </td>
-                                                <td>
-                                                    $ 400
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <h6 class="m-0 text-right">Shipping:</h6>
-                                                </td>
-                                                <td>
-                                                    Free
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <h6 class="m-0 text-right">Total:</h6>
-                                                </td>
-                                                <td>
-                                                    $ 400
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end modal -->
+                <!-- Sidebar -->
             </div>
-            <!-- end main content-->
-
         </div>
-        <!-- END layout-wrapper -->
+        <!-- Left Sidebar End -->
 
-        <!-- JAVASCRIPT -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/dashboard.init.js"></script>
-        <script src="assets/js/app.js"></script>
-    </body>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">NPC MinGen
+                                                Directory</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h4 class="card-title mb-4">Total Contacts</h4>
+                                    </div>
+                                    <div class="row">
+                                        <center>
+                                            <div class="col-sm-6 mt-2">
+                                                <h2>$34,252</h2>
+                                                <p class="text-muted">Across all Departments</p>
+                                            </div>
+                                        </center>
+                                        <div class="col-sm-6">
+                                            <div class="mt-4 mt-sm-0">
+                                                <div id="radialBar-chart" data-colors='["--bs-primary"]'
+                                                    class="apex-charts"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h4 class="card-title mb-4">Total Contacts Per Department</h4>
+                                        <i class="fas fa-ellipsis-h ms-auto"></i>
+                                    </div>
+                                    <div class="row">
+                                        <center>
+                                            <div class="col-sm-6 mt-2">
+                                                <h2>$34,252</h2>
+                                                <p class="text-muted">
+                                                    <bold class="fw-bold">Department:</bold><span
+                                                        class="text-success me-2"> 12%</span>
+                                                </p>
+                                            </div>
+                                        </center>
+                                        <div class="col-sm-6">
+                                            <div class="mt-4 mt-sm-0">
+                                                <div id="radialBar-chart" data-colors='["--bs-primary"]'
+                                                    class="apex-charts"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title mb-4">Contacts Distribution</h4>
+                                    </div>
+
+                                    <div id="stacked-column-chart" class="apex-charts"
+                                        data-colors='["--bs-primary", "--bs-warning", "--bs-success"]' dir="ltr"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mt-2 mb-4">
+                                        <h4 class="card-title mb-0">Departments</h4>
+                                        <div class="flex-shrink-0">
+                                            <a href="add_department.html"
+                                                class="btn btn-primary waves-effect btn-label waves-lighty"><i
+                                                    class="fas fa-plus-circle label-icon"></i> Add Department</a>
+                                            <div class="dropdown d-inline-block">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table id="departmentTable" class="table table-striped table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="align-middle">No.</th>
+                                                    <th class="align-middle">Department Name</th>
+                                                    <th class="align-middle">Description</th>
+                                                    <th class="align-middle">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end table-responsive -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/dashboard.init.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            getDocs,
+            query,
+            where,
+            orderBy
+        } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCAScRRCt3vkzG9kbaaVlwn1S6R2PkSZt8",
+            authDomain: "npc-directory-fe968.firebaseapp.com",
+            projectId: "npc-directory-fe968",
+            storageBucket: "npc-directory-fe968.appspot.com",
+            messagingSenderId: "405924419354",
+            appId: "1:405924419354:web:886dbdd295db21d008bea3"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        console.log(app);
+        var count = 1;
+
+        // Function to fetch data from Firestore and populate DataTable
+        function fetchData() {
+            getDocs(collection(db, "Department"), orderBy("dept_name"))
+                .then((querySnapshot) => {
+                    let deptTable = $('#departmentTable');
+
+                    // Clear existing table rows
+                    deptTable.find("tbody").empty();
+
+                    querySnapshot.forEach((doc, index) => {
+                        let data = doc.data();
+                        let newRow = `
+                                <tr>
+                                    <td>${count}</td>
+                                    <td>${data.dept_name}</td>
+                                    <td>${data.description}</td>
+                                    <td>
+                                        <center>
+                                            <button type="button" class="btn btn-good btn-edit" style="margin-right: 7px !important;">Edit</button>
+                                            <button type="button" class="btn btn-bad btn-delete">Delete</button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            `;
+                        deptTable.find("tbody").append(newRow);
+                        count += 1;
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching documents: ", error);
+                });
+        }
+
+        // Initial fetch
+        fetchData();
+
+    </script>
+</body>
+
 </html>
