@@ -1,448 +1,446 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        
-        <meta charset="utf-8" />
-        <title>Contacts | NPC MinGen Directory</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+<head>
 
-        <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-        <!-- App js -->
-        <script src="assets/js/plugin.js"></script>
+    <meta charset="utf-8" />
+    <title>Contacts | NPC MinGen Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="NPC MinGen Directory" name="description" />
+    <meta content="NPC" name="NPC" />
+    <link href="./assets/img/napocorlogo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
 
-    </head>
 
-    <body data-topbar="dark">
 
-        <!-- Begin page -->
-        <div id="layout-wrapper">
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- App js -->
+    <script src="assets/js/plugin.js"></script>
 
-            <header id="page-topbar">
-                <div class="navbar-header">
-                    <div class="d-flex">
-                        <!-- LOGO -->
-                        <div class="navbar-brand-box">
-                            <a href="dashboard.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="./assets/img/napocorlogo.png" alt="" height="30">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="./assets/img/napocorlogo.png" alt="NPC Logo" height="50">
-                                </span>
-                            </a>
-                        </div>
+</head>
 
-                        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                            <i class="fa fa-fw fa-bars"></i>
+<body data-topbar="dark">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="dashboard.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="./assets/img/napocorlogo.png" alt="" height="30">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="./assets/img/napocorlogo.png" alt="NPC Logo" height="50">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
+                            <i class="fas fa-chevron-down d-none d-xl-inline-block"></i>
                         </button>
-                    </div>
-
-                    <div class="d-flex">
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user"></i>
-                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
-                                <i class="fas fa-chevron-down d-none d-xl-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
-                                    <span key="t-profile">Profile</span></a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i
-                                        class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                                        key="t-logout">Logout</span></a>
-                            </div>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item text-danger" id="logout" href="#"><i
+                                    class="fas fa-sign-out-alt font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
                         </div>
-    
                     </div>
-                </div>
-            </header>
 
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
-
-                <div data-simplebar class="h-100">
-
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" key="t-menu">Menu</li>
-
-                            <li>
-                                <a href="dashboard.html" class="waves-effect">
-                                    <i class="fas fa-home"></i>
-                                    <span key="t-dashboards">Dashboard</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="contacts.html" class="waves-effect">
-                                    <i class="fas fa-address-book"></i>
-                                    <span key="t-contacts">Contacts</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- Sidebar -->
                 </div>
             </div>
-            <!-- Left Sidebar End -->
+        </header>
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
 
-                <div class="page-content">
-                    <div class="container-fluid">
+            <div data-simplebar class="h-100">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Contacts</h4>
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title" key="t-menu">Menu</li>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">NPC MinGen Directory</a></li>
-                                            <li class="breadcrumb-item active">Contacts</li>
-                                        </ol>
-                                    </div>
+                        <li>
+                            <a href="dashboard.html" class="waves-effect">
+                                <i class="fas fa-home"></i>
+                                <span key="t-dashboards">Dashboard</span>
+                            </a>
+                        </li>
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
+                        <li>
+                            <a href="contacts.html" class="waves-effect">
+                                <i class="fas fa-address-book"></i>
+                                <span key="t-contacts">Contacts</span>
+                            </a>
+                        </li>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body border-bottom">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="mb-0 card-title flex-grow-1">Manage Contacts</h5>
-                                            <div class="flex-shrink-0">
-                                                <a href="add_contact.html" class="btn btn-primary waves-effect btn-label waves-lighty"><i class="fas fa-plus-circle label-icon"></i> Add Contact</a>
-                                                <div class="dropdown d-inline-block">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body border-bottom">
-                                        <div class="row g-3">
-                                            <div class="col-xxl-4 col-lg-6">
-                                                <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
-                                            </div>
-                                            <div class="col-xxl-2 col-lg-6">
-                                                <select class="form-control select2">
-                                                    <option>Status</option>
-                                                    <option value="Active">Active</option>
-                                                    <option value="New">New</option>
-                                                    <option value="Close">Close</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xxl-2 col-lg-4">
-                                                <select class="form-control select2">
-                                                    <option>Select Type</option>
-                                                    <option value="1">Full Time</option>
-                                                    <option value="2">Part Time</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xxl-2 col-lg-4">
-                                                <div id="datepicker1">
-                                                    <input type="text" class="form-control" placeholder="Select date" data-date-format="dd M, yyyy" data-date-autoclose="true" data-date-container='#datepicker1' data-provide="datepicker">
-                                                </div><!-- input-group -->
-                                            </div>
-                                            <div class="col-xxl-2 col-lg-4">
-                                                <button type="button" class="btn btn-soft-secondary w-100"><i class="mdi mdi-filter-outline align-middle"></i> Filter</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--end card-->
-                            </div><!--end col-->
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="avatar-sm mx-auto mb-4">
-                                            <span class="avatar-title rounded-circle bg-primary-subtle text-primary font-size-16">
-                                                D
-                                            </span>
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">David McHenry</a></h5>
-                                        <p class="text-muted">UI/UX Designer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Photoshop</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">illustrator</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-2.jpg" alt="">
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Frank Kirk</a></h5>
-                                        <p class="text-muted">Frontend Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Html</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Css</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-3.jpg" alt="">
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Rafael Morales</a></h5>
-                                        <p class="text-muted">Backend Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Java</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Python</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="avatar-sm mx-auto mb-4">
-                                            <span class="avatar-title rounded-circle bg-success-subtle text-success font-size-16">
-                                                M
-                                            </span>
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Mark Ellison</a></h5>
-                                        <p class="text-muted">Full Stack Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Ruby</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-4.jpg" alt="">
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Minnie Walter</a></h5>
-                                        <p class="text-muted">Frontend Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Html</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Css</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-5.jpg" alt="">
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Shirley Smith</a></h5>
-                                        <p class="text-muted">UI/UX Designer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Photoshop</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">illustrator</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="avatar-sm mx-auto mb-4">
-                                            <span class="avatar-title rounded-circle bg-info-subtle text-info font-size-16">
-                                                J
-                                            </span>
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">John Santiago</a></h5>
-                                        <p class="text-muted">Full Stack Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Ruby</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">2 + more</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <img class="rounded-circle avatar-sm" src="assets/images/users/avatar-7.jpg" alt="">
-                                        </div>
-                                        <h5 class="font-size-15 mb-1"><a href="javascript: void(0);" class="text-dark">Colin Melton</a></h5>
-                                        <p class="text-muted">Backend Developer</p>
-
-                                        <div>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Php</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Java</a>
-                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">Python</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-transparent border-top">
-                                        <div class="contact-links d-flex font-size-20">
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-message-square-dots"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-pie-chart-alt"></i></a>
-                                            </div>
-                                            <div class="flex-fill">
-                                                <a href="javascript: void(0);"><i class="bx bx-user-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                    </div> <!-- container-fluid -->
+                    </ul>
                 </div>
-                <!-- End Page-content -->
+                <!-- Sidebar -->
             </div>
-            <!-- end main content-->
-
         </div>
-        <!-- END layout-wrapper -->
+        <!-- Left Sidebar End -->
 
-        <!-- JAVASCRIPT -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/dashboard.init.js"></script>
-        <script src="assets/js/app.js"></script>
-    </body>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Contacts</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">NPC MinGen
+                                                Directory</a></li>
+                                        <li class="breadcrumb-item active">Contacts</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="mb-0 card-title flex-grow-1">Manage Contacts</h5>
+                                        <div class="col-xxl-4 col-lg-6 me-2">
+                                            <input type="search" class="form-control" id="searchInput"
+                                                placeholder="Search for ..." oninput="searchMembers()">
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <a href="add_contact.html"
+                                                class="btn btn-primary waves-effect btn-label waves-lighty"><i
+                                                    class="fas fa-plus-circle label-icon"></i> Add Contact</a>
+                                            <div class="dropdown d-inline-block">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--end card-->
+                        </div><!--end col-->
+
+                    </div>
+
+                    <div class="row" id="list">
+
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/dashboard.init.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            getDocs,
+            query,
+            where,
+            orderBy,
+            deleteDoc,
+            onSnapshot
+        } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCAScRRCt3vkzG9kbaaVlwn1S6R2PkSZt8",
+            authDomain: "npc-directory-fe968.firebaseapp.com",
+            projectId: "npc-directory-fe968",
+            storageBucket: "npc-directory-fe968.appspot.com",
+            messagingSenderId: "405924419354",
+            appId: "1:405924419354:web:886dbdd295db21d008bea3"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        console.log(app);
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Function to fetch data from Firestore and populate contacts grouped by department
+            function fetchData() {
+                getDocs(collection(db, "Contacts"))
+                    .then((querySnapshot) => {
+                        let contactsByDepartment = {};
+
+                        querySnapshot.forEach((doc) => {
+                            let data = doc.data();
+                            let department = data.dept;
+
+                            // Initialize the department array if it doesn't exist
+                            if (!contactsByDepartment[department]) {
+                                contactsByDepartment[department] = [];
+                            }
+
+                            // Push the contact data into the respective department array
+                            contactsByDepartment[department].push({
+                                id: doc.id,
+                                name: data.name,
+                                profile: data.profile,
+                                position: data.position,
+                                cisco_tel: data.cisco_tel,
+                                fax_tel: data.fax_tel,
+                                lan_tel: data.lan_tel,
+                                local_num: data.local_num
+                            });
+                        });
+
+                        // Clear existing content
+                        let contactList = $('#list');
+                        contactList.empty();
+
+                        // Iterate over departments and render each section
+                        for (let department in contactsByDepartment) {
+                            let departmentContacts = contactsByDepartment[department];
+
+                            // Create section header
+                            let section = `
+                            <div class="col-lg-12 text-center mb-2">
+                                <hr style="border-top: 2px solid #ff0000;">
+                                <h4>${department}</h4>
+                                <hr style="border-top: 2px solid #ff0000;">
+                            </div>
+                        `;
+
+                            // Append section header to contact list
+                            contactList.append(section);
+
+                            // Render contacts under this department
+                            departmentContacts.forEach((contact) => {
+                                let contactHtml = `
+                            <div class="col-xl-3 col-sm-6 grid">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <img class="rounded-circle avatar-sm" src="${contact.profile}" alt="">
+                                        </div>
+                                        <h5 class="font-size-15 mb-1 name">${contact.name}</h5>
+                                        <p class="text-muted">${department}</p>
+                                        <div>
+                                            <a href="javascript: void(0);" class="badge bg-primary font-size-11 m-1">${contact.position}</a>
+                                        </div>`;
+
+                                // Conditionally render Cisco Telepresence if available
+                                if (contact.cisco_tel) {
+                                    contactHtml += `
+                                <div class="mt-1 ms-3" style="text-align:left !important;">
+                                    <h6 class="mb-1 name">Cisco Telepresence: <span class="text-muted">&nbsp; ${contact.cisco_tel}</span></h6>
+                                </div>`;
+                                }
+
+                                // Conditionally render Fax if available
+                                if (contact.fax_tel) {
+                                    contactHtml += `
+                                <div class="mt-1 ms-3" style="text-align:left !important;">
+                                    <h6 class="mb-1 name">Fax: <span class="text-muted">&nbsp; ${contact.fax_tel}</span></h6>
+                                </div>`;
+                                }
+
+                                // Conditionally render Landline if available
+                                if (contact.lan_tel) {
+                                    contactHtml += `
+                                <div class="mt-1 ms-3" style="text-align:left !important;">
+                                    <h6 class="mb-1 name">Landline: <span class="text-muted">&nbsp; ${contact.lan_tel}</span></h6>
+                                </div>`;
+                                }
+
+                                // Conditionally render Local Number if available
+                                if (contact.local_num) {
+                                    contactHtml += `
+                                <div class="mt-1 ms-3" style="text-align:left !important;">
+                                    <h6 class="mb-1 name">Local Number: <span class="text-muted">&nbsp; ${contact.local_num}</span></h6>
+                                </div>`;
+                                }
+
+                                contactHtml += `
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top">
+                                        <div class="contact-links d-flex font-size-20">
+                                            <div class="ms-auto">
+                                                <a href="edit_contact.html?d=${contact.id}" class="btn btn-warning">
+                                                    <i class="fas fa-pen text-white"></i>
+                                                </a>
+                                            </div>
+                                            <div class="ms-2">
+                                                <button type="button" class="btn btn-danger delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                                // Append contact HTML to the corresponding section
+                                $('#list').append(contactHtml);
+                            });
+
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching documents: ", error);
+                    });
+            }
+
+            // Event listener for deleting contacts
+            $(document).on("click", ".delete", function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let name = $(this).closest(".card").find("h5.name").text().trim();
+
+                        // Query Firestore for the document with matching name
+                        getDocs(query(collection(db, "Contacts"), where("name", "==", name)))
+                            .then((querySnapshot) => {
+                                const deletePromises = [];
+                                querySnapshot.forEach((doc) => {
+                                    // Delete the document
+                                    deletePromises.push(deleteDoc(doc.ref));
+                                });
+                                return Promise.all(deletePromises);
+                            })
+                            .then(() => {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Contact has been deleted.",
+                                    icon: "success"
+                                });
+                            })
+                            .catch((error) => {
+                                console.error("Error deleting document: ", error);
+                                Swal.fire({
+                                    title: "Error!",
+                                    text: "There was an error deleting the contact.",
+                                    icon: "error"
+                                });
+                            });
+                    }
+                });
+            });
+
+
+            // Function to filter contacts based on search input
+            function searchMembers() {
+                // Get search input value
+                let searchQuery = document.getElementById('searchInput').value.toLowerCase();
+                console.log(searchQuery);
+
+                // Fetch data again to ensure all contacts are available
+                fetchData();
+
+                // Filter contacts based on search query
+                let filteredContacts = [];
+                setTimeout(() => { // Add a slight delay to ensure DOM elements are rendered
+                    filteredContacts = Array.from(document.querySelectorAll('.grid')).filter(contact => {
+                        console.log('contact', contact);
+                        let contactName = contact.querySelector('.name').textContent.toLowerCase();
+                        return contactName.includes(searchQuery);
+                    });
+
+                    // Show/hide contacts based on search results
+                    Array.from(document.querySelectorAll('.grid')).forEach(contact => {
+                        contact.style.display = filteredContacts.includes(contact) ? 'block' : 'none';
+                    });
+                }, 500);
+            }
+
+            // Attach searchMembers function to the window object
+            window.searchMembers = searchMembers;
+
+            // Initialize Firebase and fetch data initially
+            const unsubscribe = onSnapshot(collection(db, "Contacts"), (snapshot) => {
+                fetchData();
+            });
+        });
+
+        document.getElementById("logout").addEventListener("click", function () {
+            signOut(auth)
+                .then(() => {
+                    // Sign-out successful.
+                    console.log("Sign-out successful.");
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Form Submitted Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        window.location.href = "index.html";
+                    });
+                })
+                .catch((error) => {
+                    // An error happened.
+                    console.log("An error happened.");
+                });
+        });
+    </script>
+</body>
+
 </html>

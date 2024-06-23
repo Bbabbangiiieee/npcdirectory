@@ -6,10 +6,14 @@
     <meta charset="utf-8" />
     <title>Add Department| NPC MinGen Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta content="NPC MinGen Directory" name="description" />
+    <meta content="NPC" name="NPC" />
+    <link href="./assets/img/napocorlogo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+
+
 
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -65,11 +69,8 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
-                                <span key="t-profile">Profile</span></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="#"><i
-                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                            <a class="dropdown-item text-danger" id="logout" href="#"><i
+                                    class="fas fa-sign-out-alt font-size-16 align-middle me-1 text-danger"></i> <span
                                     key="t-logout">Logout</span></a>
                         </div>
                     </div>
@@ -163,7 +164,9 @@
                                             <div class="row">
                                                 <div class="mb-3">
                                                     <label class="form-label">Description</label>
-                                                    <textarea class="form-control" id="description" style="height: 100px;" placeholder="Enter Description"></textarea>
+                                                    <textarea class="form-control" id="description"
+                                                        style="height: 100px;"
+                                                        placeholder="Enter Description"></textarea>
                                                 </div>
                                             </div>
 
@@ -209,17 +212,18 @@
             getFirestore,
             collection,
             addDoc,
+            getDocs,
             query,
             where,
         } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
         const firebaseConfig = {
-        apiKey: "AIzaSyCAScRRCt3vkzG9kbaaVlwn1S6R2PkSZt8",
-        authDomain: "npc-directory-fe968.firebaseapp.com",
-        projectId: "npc-directory-fe968",
-        storageBucket: "npc-directory-fe968.appspot.com",
-        messagingSenderId: "405924419354",
-        appId: "1:405924419354:web:886dbdd295db21d008bea3"
+            apiKey: "AIzaSyCAScRRCt3vkzG9kbaaVlwn1S6R2PkSZt8",
+            authDomain: "npc-directory-fe968.firebaseapp.com",
+            projectId: "npc-directory-fe968",
+            storageBucket: "npc-directory-fe968.appspot.com",
+            messagingSenderId: "405924419354",
+            appId: "1:405924419354:web:886dbdd295db21d008bea3"
         };
 
         // Initialize Firebase
@@ -240,8 +244,8 @@
                     let dept_name = document.getElementById('dept_name').value;
                     let description = document.getElementById('description').value;
                     const deptQuery = query(
-                    collection(db, "Department"),
-                    where("dept_name", "==", dept_name)
+                        collection(db, "Department"),
+                        where("dept_name", "==", dept_name)
                     );
                     const deptQuerySnapshot = await getDocs(deptQuery);
 
@@ -258,11 +262,11 @@
                             description: description
                         });
                         Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Form Submitted Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
+                            position: "center",
+                            icon: "success",
+                            title: "Form Submitted Successfully",
+                            showConfirmButton: false,
+                            timer: 1500
                         }).then(() => {
                             window.location.href = 'dashboard.html';
                         });
@@ -270,6 +274,27 @@
                 }
                 form.classList.add('was-validated');
             }, false);
+        });
+
+        document.getElementById("logout").addEventListener("click", function () {
+            signOut(auth)
+                .then(() => {
+                    // Sign-out successful.
+                    console.log("Sign-out successful.");
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Form Submitted Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        window.location.href = "index.html";
+                    });
+                })
+                .catch((error) => {
+                    // An error happened.
+                    console.log("An error happened.");
+                });
         });
     </script>
 </body>

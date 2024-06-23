@@ -1,19 +1,28 @@
 /* ======================= START HERE ==================== */
-.right-bg{
+.right-bg {
   background-image: url(../img/mingen3.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.bg-overlay{
+.bg-overlay {
   height: 100%;
   background: rgba(0, 0, 0, 0.38);
 }
 
+.rounded-circle {
+  border-radius: 50% !important
+}
+
+.avatar-sm {
+  height: 5rem;
+  width: 5rem
+}
 
 .search-container-header {
   position: absolute;
-  top: -50px; /* adjust this value to hide the search bar */
+  top: -50px;
+  /* adjust this value to hide the search bar */
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -28,7 +37,7 @@
   margin: 0 auto;
   transition: top 0.5s ease;
   right: 0;
-  
+
 }
 
 .search-container-header.scrolled {
@@ -40,6 +49,7 @@
   transition: top 0.5s ease;
   right: 0;
 }
+
 /* ====== ICON ====== */
 
 #icon {
@@ -54,7 +64,7 @@
 #navicon {
   width: 20px;
   height: 20px;
-  
+
   border-radius: 50%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
@@ -96,7 +106,7 @@
 #search-button i {
   font-size: 20px;
   color: #ffffff;
-  
+
 }
 
 
@@ -121,10 +131,12 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 255, 0.5); /* Adjust the RGB values and transparency as needed */
+  background-color: rgba(0, 0, 255, 0.5);
+  /* Adjust the RGB values and transparency as needed */
   z-index: 1;
 }
- /* ======== NPC NEW CSS ======== */
+
+/* ======== NPC NEW CSS ======== */
 :root {
   --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Montserrat", sans-serif;
@@ -857,9 +869,11 @@ section {
   0% {
     transform: translate(-50%, -50%) rotate(45deg) scale(1);
   }
+
   50% {
     transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
   }
@@ -1138,10 +1152,12 @@ section,
     font-size: 18px;
   }
 }
-  
+
 .hero .container {
-  padding-top: 100px; /* Add this */
-  padding-bottom: 100px; /* Add this */
+  padding-top: 100px;
+  /* Add this */
+  padding-bottom: 100px;
+  /* Add this */
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -1241,7 +1257,8 @@ section,
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 4px solid #007bff; /* Set the border color to blue */
+  border: 4px solid #007bff;
+  /* Set the border color to blue */
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
 }
 
@@ -1254,9 +1271,12 @@ section,
 .team .member .member-img img {
   position: relative;
   z-index: 1;
-  width: 300px; /* Set the image width to 100% of the container */
-  height: 300px; /* Maintain the aspect ratio */
-  display: block; /* Remove any extra spacing below the image */
+  width: 300px;
+  /* Set the image width to 100% of the container */
+  height: 300px;
+  /* Maintain the aspect ratio */
+  display: block;
+  /* Remove any extra spacing below the image */
 }
 
 
@@ -1295,7 +1315,8 @@ ul.no-bullets {
 }
 
 ul.no-bullets li {
-  margin-left: 1.5em; /* Adjust the spacing if needed */
+  margin-left: 1.5em;
+  /* Adjust the spacing if needed */
 }
 
 p.left-align {
@@ -1317,7 +1338,8 @@ p.left-align {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 4px solid #007bff; /* Set the border color to blue */
+  border: 4px solid #007bff;
+  /* Set the border color to blue */
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
 }
 
@@ -1330,9 +1352,12 @@ p.left-align {
 .istd .member .member-img img {
   position: relative;
   z-index: 1;
-  width: 300px; /* Set the image width to 100% of the container */
-  height: 300px; /* Maintain the aspect ratio */
-  display: block; /* Remove any extra spacing below the image */
+  width: 300px;
+  /* Set the image width to 100% of the container */
+  height: 300px;
+  /* Maintain the aspect ratio */
+  display: block;
+  /* Remove any extra spacing below the image */
 }
 
 
@@ -1371,7 +1396,8 @@ ul.no-bullets {
 }
 
 ul.no-bullets li {
-  margin-left: 1.5em; /* Adjust the spacing if needed */
+  margin-left: 1.5em;
+  /* Adjust the spacing if needed */
 }
 
 p.left-align {
@@ -1508,4 +1534,3 @@ p.left-align {
   margin-right: 8px;
   color: var(--accent-color);
 }
-
