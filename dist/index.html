@@ -115,23 +115,6 @@
 
     </div>
 
-    <!-- No Results -->
-    <section id="no-results-section" style="display: none;">
-      <br>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>No Results !!</h3>
-              <p>Sorry, there is nothing of that in the directory.</p>
-              <a class="cta-btn" href="index.html">Go to Homepage</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- End Call-to-action Section -->
-
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="container copyright text-center mt-4">
@@ -147,11 +130,6 @@
     </footer>
 
     <!-- End Footer -->
-
-
-
-    <div class="nav-buttons">
-    </div>
 
     <!-- Scroll Top Button -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -213,9 +191,8 @@
 
               // Clear existing content
               let deptList = $('#deptList');
-              let navButtons = $('.nav-buttons');
 
-            
+
               // Create section header
               let deptSection = `
                 <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
@@ -230,9 +207,6 @@
 
               // Append section header to contact list
               deptList.append(deptSection);
-
-              let navButton = `<a href="#${data.dept_name}" class="nav-button"><span>${data.dept_name.substring(0, 3)}</span></a>`
-              navButtons.append(navButton);
             })
           })
           .catch((error) => {
@@ -277,7 +251,7 @@
 
                 // Create section header
                 let section = `
-                        <div class="col-lg-12 text-center mb-2 deptHeader" id="${department}">
+                        <div id="${department}" class="col-lg-12 text-center mb-2 elementHead deptHeader">
                             <hr style="border-top: 2px solid #ff0000;">
                             <h4 class="dept_name">${department}</h4>
                             <hr style="border-top: 2px solid #ff0000;">
@@ -306,7 +280,7 @@
                   if (contact.cisco_tel) {
                     contactHtml += `
                             <div class="mt-1 ms-3" style="text-align:left !important;">
-                                <h6 class="mb-1 name">Cisco Telepresence: <span class="text-muted">&nbsp; ${contact.cisco_tel}</span></h6>
+                                <h6 class="mb-1 cisco_tel">Cisco Telepresence: <span class="text-muted">&nbsp; ${contact.cisco_tel}</span></h6>
                             </div>`;
                   }
 
@@ -314,7 +288,7 @@
                   if (contact.fax_tel) {
                     contactHtml += `
                             <div class="mt-1 ms-3" style="text-align:left !important;">
-                                <h6 class="mb-1 name">Fax: <span class="text-muted">&nbsp; ${contact.fax_tel}</span></h6>
+                                <h6 class="mb-1 fax_tel">Fax: <span class="text-muted">&nbsp; ${contact.fax_tel}</span></h6>
                             </div>`;
                   }
 
@@ -322,7 +296,7 @@
                   if (contact.lan_tel) {
                     contactHtml += `
                             <div class="mt-1 ms-3" style="text-align:left !important;">
-                                <h6 class="mb-1 name">Landline: <span class="text-muted">&nbsp; ${contact.lan_tel}</span></h6>
+                                <h6 class="mb-1 lan_tel">Landline: <span class="text-muted">&nbsp; ${contact.lan_tel}</span></h6>
                             </div>`;
                   }
 
@@ -330,7 +304,7 @@
                   if (contact.local_num) {
                     contactHtml += `
                             <div class="mt-1 ms-3" style="text-align:left !important;">
-                                <h6 class="mb-1 name">Local Number: <span class="text-muted">&nbsp; ${contact.local_num}</span></h6>
+                                <h6 class="mb-1 local_num">Local Number: <span class="text-muted">&nbsp; ${contact.local_num}</span></h6>
                             </div>`;
                   }
 
@@ -356,48 +330,84 @@
         // Function to filter contacts based on search input
         function searchMembers() {
           // Get search input value
-          let searchQuery = document.getElementById('search').value.toLowerCase();
+          let searchQuery = document.getElementById('search').value.toLowerCase().replace(/[^a-z\d-]/g, '');
+
           console.log(searchQuery);
 
-          // Fetch data again to ensure all contacts are available
+          // Fetch data again to ensure all contacts are available (assuming fetchData() does this)
           fetchData();
 
           // Filter contacts based on search query
           let filteredContacts = [];
           let filteredDepartment = [];
-          let contactName;
-          let deptName;
+          let showElementHead = false;
+
           setTimeout(() => { // Add a slight delay to ensure DOM elements are rendered
+            // If searchQuery is empty, show all elements
+            if (searchQuery === '') {
+              const elementsToShow = document.querySelectorAll('.grid, .deptHeader, .hero, .services, .section-title');
+              elementsToShow.forEach(element => {
+                element.style.display = 'block';
+              });
+              document.getElementById('list').style.marginTop = '5rem';
+              return; // Exit the function early if searchQuery is empty
+            }
+
             filteredContacts = Array.from(document.querySelectorAll('.grid')).filter(contact => {
-              console.log('contact', contact);
-              contactName = contact.querySelector('.name').textContent.toLowerCase();
-              return contactName.includes(searchQuery);
+              let contactName = contact.querySelector('.name').textContent.toLowerCase().replace(/[^a-z\d-]/g, '');
+              let cisco_tel = contact.querySelector('.cisco_tel') ? contact.querySelector('.cisco_tel').textContent.toLowerCase().replace(/[^a-z\d-]/g, '') : '';
+              let fax_tel = contact.querySelector('.fax_tel') ? contact.querySelector('.fax_tel').textContent.toLowerCase().replace(/[^a-z\d-]/g, '') : '';
+              let lan_tel = contact.querySelector('.lan_tel') ? contact.querySelector('.lan_tel').textContent.toLowerCase().replace(/[^a-z\d-]/g, '') : '';
+              let local_num = contact.querySelector('.local_num') ? contact.querySelector('.local_num').textContent.toLowerCase().replace(/[^a-z\d-]/g, '') : '';
+
+              // Filter condition includes both contactName and other fields
+              return contactName.includes(searchQuery) || cisco_tel.includes(searchQuery) || fax_tel.includes(searchQuery) || lan_tel.includes(searchQuery) || local_num.includes(searchQuery);
             });
 
             filteredDepartment = Array.from(document.querySelectorAll('.deptHeader')).filter(department => {
-              console.log('department', department);
-              deptName = department.querySelector('.dept_name').textContent.toLowerCase();
+              let deptName = department.querySelector('.dept_name').textContent.toLowerCase().replace(/[^a-z\d-]/g, '');
               return deptName.includes(searchQuery);
             });
 
-            Array.from(document.querySelectorAll('.services')).forEach(contact => {
-                contact.style.display = filteredContacts.includes(contact) ? 'block' : 'none';
+            const elements = document.querySelectorAll('.hero, .services, .section-title');
+            elements.forEach(contact => {
+              contact.style.display = filteredContacts.includes(contact) ? 'block' : 'none';
             });
-            Array.from(document.querySelectorAll('.section-title')).forEach(contact => {
-                contact.style.display = filteredContacts.includes(contact) ? 'block' : 'none';
+
+            Array.from(document.querySelectorAll('.grid, .deptHeader')).forEach(element => {
+              const showElement = filteredContacts.includes(element) || filteredDepartment.includes(element);
+
+              // If element is in filteredContacts, set the flag to true
+              if (filteredContacts.includes(element)) {
+                showElementHead = true;
+              }
+
+              // Set the display property based on the conditions
+              element.style.display = showElement ? 'block' : 'none';
+
+              // If element is in filteredDepartment, ensure it's displayed
+              if (filteredDepartment.includes(element)) {
+                let id = element.getAttribute('id');
+                if (id) {
+                  element.style.setProperty('display', 'block', 'important');
+                }
+              }
             });
-            if (contactName.includes(searchQuery)) {
-              Array.from(document.querySelectorAll('.grid')).forEach(element => {
-                  element.style.display = filteredContacts.includes(element) ? 'block' : 'none';
-              });
-            }
-            
-            if (deptName.includes(searchQuery)) {
-              Array.from(document.querySelectorAll('.deptHeader')).forEach(department => {
-                department.style.display = filteredDepartment.includes(department) ? 'block' : 'none';
+
+            // Toggle classes for elementHead based on showElementHead
+            Array.from(document.querySelectorAll('.elementHead')).forEach(elementHead => {
+              if (showElementHead) {
+                elementHead.classList.add('d-block');
+                elementHead.classList.remove('d-none');
+              } else {
+                elementHead.classList.add('d-none');
+                elementHead.classList.remove('d-block');
+              }
             });
-            }
-            
+
+            // Adjust the list margin if needed
+            document.getElementById('list').style.marginTop = '5rem';
+
           }, 500);
         }
 
